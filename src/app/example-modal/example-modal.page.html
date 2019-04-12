@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar text-center>
+      <ion-title>{{modalTitle}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center>
+          Value: {{modalparam1}}
+          OldValue: {{modalparam2}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <ion-button (click)="closeModal()">Close</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

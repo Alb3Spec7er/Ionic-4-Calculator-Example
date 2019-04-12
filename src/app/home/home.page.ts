@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { isNumber } from 'util';
+import { ModalController, NavParams } from '@ionic/angular';
+import { ExampleModalPage } from '../example-modal/example-modal.page';
+
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,30 @@ import { isNumber } from 'util';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
+  constructor(
+    public modalController: ModalController
+  ) { }
+
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: ExampleModalPage,
+      componentProps: {
+        "param1": this.value,
+        "param2": this.oldValue,
+        "paramTitle": "List of values"
+      }
+    });
+
+    modal.onDidDismiss().then((dataReturned) => {
+      if (dataReturned !== null) {
+        console.log('Modal Sent Data :', dataReturned);
+      }
+    });
+
+    return await modal.present();
+  }
+
   value = '0';
   oldValue = '0';
 

@@ -15,4 +15,10 @@
   <div *ngFor="let numGroup of numberGroups">
     <ion-button *ngFor="let num of numGroup" (click)="onButtonPress(num)" class="calc-button">{{num}}</ion-button>
   </div>
+
+  <ion-content padding>
+
+    <ion-button (click)="openModal()">List of values</ion-button>
+
+</ion-content>
 </ion-content>
