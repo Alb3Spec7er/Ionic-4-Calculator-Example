@@ -9,8 +9,8 @@ import { ModalController, NavParams } from '@ionic/angular';
 export class ExampleModalPage implements OnInit {
 
   modalTitle:string;
-  modelpram1:number;
-  modelpram2:number;
+  modalparam1:number;
+  modalparam2:number;
 
 
   constructor(
